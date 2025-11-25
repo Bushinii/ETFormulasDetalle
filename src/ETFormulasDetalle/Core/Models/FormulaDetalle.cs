@@ -13,5 +13,7 @@ public partial class FormulaDetalle
 
     public decimal Cantidad { get; set; }
 
+    public bool Activo { get; set; }
+
     public virtual Formula IdformulaNavigation { get; set; } = null!;
 }

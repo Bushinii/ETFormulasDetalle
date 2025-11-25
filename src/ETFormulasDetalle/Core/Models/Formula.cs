@@ -21,6 +21,8 @@ public partial class Formula
 
     public string? Descripcion { get; set; }
 
+    public bool Activo { get; set; }
+
     public virtual ICollection<FormulaDetalle> FormulaDetalles { get; set; } = new List<FormulaDetalle>();
 
     public virtual Producto IdproductoNavigation { get; set; } = null!;

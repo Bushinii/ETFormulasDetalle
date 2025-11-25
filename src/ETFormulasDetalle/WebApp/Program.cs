@@ -1,4 +1,5 @@
 using Core;
+using Core.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -9,6 +10,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ETFormulasDBContext>(options =>
     options.UseSqlServer(connectionString));
 
+builder.Services.AddCoreServices();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

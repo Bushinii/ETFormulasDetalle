@@ -30,11 +30,12 @@ public partial class ETFormulasDBContext : DbContext
     {
         modelBuilder.Entity<Formula>(entity =>
         {
-            entity.HasKey(e => e.Idformula).HasName("PK__Formula__C9A955C51B343411");
+            entity.HasKey(e => e.Idformula).HasName("PK__Formula__C9A955C5F9153910");
 
             entity.ToTable("Formula");
 
             entity.Property(e => e.Idformula).HasColumnName("IDFormula");
+            entity.Property(e => e.Activo).HasDefaultValue(true);
             entity.Property(e => e.Descripcion)
                 .HasMaxLength(500)
                 .IsUnicode(false);
@@ -71,6 +72,7 @@ public partial class ETFormulasDBContext : DbContext
             entity.ToTable("FormulaDetalle");
 
             entity.Property(e => e.Idformula).HasColumnName("IDFormula");
+            entity.Property(e => e.Activo).HasDefaultValue(true);
             entity.Property(e => e.Cantidad).HasColumnType("decimal(18, 2)");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(150)
@@ -84,7 +86,7 @@ public partial class ETFormulasDBContext : DbContext
 
         modelBuilder.Entity<Producto>(entity =>
         {
-            entity.HasKey(e => e.Idproducto).HasName("PK__Producto__ABDAF2B495262392");
+            entity.HasKey(e => e.Idproducto).HasName("PK__Producto__ABDAF2B42B6F9CFA");
 
             entity.ToTable("Producto");
 
@@ -97,7 +99,7 @@ public partial class ETFormulasDBContext : DbContext
 
         modelBuilder.Entity<Rol>(entity =>
         {
-            entity.HasKey(e => e.IdRol).HasName("PK__Rol__2A49584C8F133154");
+            entity.HasKey(e => e.IdRol).HasName("PK__Rol__2A49584C01AFF25A");
 
             entity.ToTable("Rol");
 
@@ -108,7 +110,7 @@ public partial class ETFormulasDBContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.IdUsuario).HasName("PK__Usuario__5B65BF97AE84A015");
+            entity.HasKey(e => e.IdUsuario).HasName("PK__Usuario__5B65BF97F0ECE20F");
 
             entity.ToTable("Usuario");
 
