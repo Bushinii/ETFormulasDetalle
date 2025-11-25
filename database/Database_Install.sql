@@ -34,6 +34,7 @@ CREATE TABLE Formula (
     FechaCreacion DATETIME NOT NULL DEFAULT GETDATE(),
     FechaActualizacion DATETIME NULL,
     Descripcion VARCHAR(500),
+    Activo BIT NOT NULL DEFAULT 1
 
     CONSTRAINT FK_Formula_Producto FOREIGN KEY (IDProducto) REFERENCES Producto(IDProducto),
     CONSTRAINT FK_Formula_Usuario_Crea FOREIGN KEY (IDUsuarioCreacion) REFERENCES Usuario(IdUsuario),
@@ -45,6 +46,7 @@ CREATE TABLE FormulaDetalle(
     Linea INT NOT NULL,
     Nombre VARCHAR(150) NOT NULL,
     Cantidad DECIMAL(18,2) NOT NULL,
+    Activo BIT NOT NULL DEFAULT 1
     
     CONSTRAINT PK_FormulaDetalle PRIMARY KEY (IDFormula, Linea),
     CONSTRAINT FK_FormulaDetalle_Formula FOREIGN KEY (IDFormula) REFERENCES Formula(IDFormula)
